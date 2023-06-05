@@ -1,0 +1,6 @@
+fastapi
+imbalanced-learn
+loguru
+loko-client
+loko-extensions
+uvicorn
