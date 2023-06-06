@@ -3,15 +3,15 @@
   "id": "imbalanced_data_extension",
   "description": "",
   "created_on": "05/06/2023, 14:06:03",
-  "last_modify": "05/06/2023, 16:53:15",
+  "last_modify": "06/06/2023, 10:33:13",
   "graphs": {
     "main": {
       "nodes": [
         {
           "id": "c52f1de4-d75d-4796-84d3-cb395936e12d",
           "position": {
-            "x": 491,
-            "y": 221
+            "x": 486.01359522289965,
+            "y": 233.46601194275095
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -98,6 +98,10 @@
           },
           "selectable": true,
           "draggable": true,
+          "positionAbsolute": {
+            "x": 486.01359522289965,
+            "y": 233.46601194275095
+          },
           "__class__": "Node"
         },
         {
@@ -295,6 +299,877 @@
           "selectable": true,
           "draggable": true,
           "__class__": "Node"
+        },
+        {
+          "id": "007df25a-0c9d-4e92-a652-919b5f62684d",
+          "position": {
+            "x": 789,
+            "y": 451
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Grouper",
+            "events": null,
+            "description": "### Description\nThe GROUPER component is used to group the elements received in input. The items will be returned in batches with a maximum size equal to **Group size**.\n\n### Input\nIn this case there is no fixed input format.\n\n### Output\nIn output lists of elements received in input with a maximum length equal to **Group size**.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input",
+                "closed": false
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "n",
+                  "label": "Group size",
+                  "type": "number"
+                }
+              ],
+              "click": null,
+              "icon": "RiGroupFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "n": "100000"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 789,
+            "y": 451
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "846a6f32-ac27-43fd-a7d3-41d23d94e00a",
+          "position": {
+            "x": 1274.0309648099635,
+            "y": 416.87575581182136
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Imbalanced Data",
+            "events": null,
+            "description": "#### Imbalanced Data",
+            "inputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing",
+                "service": "balance",
+                "to": "balancing"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "method",
+                  "type": "select",
+                  "label": "Sampling Method",
+                  "helper": "",
+                  "group": "",
+                  "value": "undersampling",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "undersampling",
+                    "oversampling",
+                    "SMOTE"
+                  ]
+                },
+                {
+                  "name": "random_state",
+                  "type": "number",
+                  "label": "Random State",
+                  "helper": "",
+                  "group": "",
+                  "value": 123,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "auto",
+                    "majority",
+                    "not majority",
+                    "not minority",
+                    "all"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "replacement",
+                  "type": "dynamic",
+                  "label": "Sample with raplacement",
+                  "helper": "",
+                  "group": "",
+                  "value": false,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "boolean",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"oversampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "k_neighbors",
+                  "type": "dynamic",
+                  "label": "K neighbors",
+                  "helper": "",
+                  "group": "",
+                  "value": 5,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "number",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                }
+              ],
+              "click": null,
+              "icon": "RiScales3Fill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "method": "undersampling",
+                "random_state": "123",
+                "sampling_strategy": "auto",
+                "replacement": false
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1274.0309648099635,
+            "y": 416.87575581182136
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "dfb7d559-1b5e-4364-bdac-6bbee9c74888",
+          "position": {
+            "x": 544.2995396478001,
+            "y": 456.7897008447431
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "CSV Reader",
+            "events": null,
+            "description": "### Description\nThe CSV READER component allows reading files in csv format. \n\nYou have the possibility to set a separator using the **Separator** parameter. The **Infer types** parameter allows the automatic transformation of the type of non-textual fields.\n\n### Input\nThe input required by this component is the file path in PosixPath format. However, the file path can also be defined when the component is created, in which case no input is required.\n\n### Output\nThe submitted file is returned row by row, where each row is represented by a dictionary that has the column names as keys.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Inputs",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "value",
+                  "type": "files",
+                  "label": "File",
+                  "fragment": "files",
+                  "helper": "choose a file or read input"
+                },
+                {
+                  "name": "separator",
+                  "type": "text",
+                  "label": "Separator"
+                },
+                {
+                  "name": "df",
+                  "type": "boolean",
+                  "label": "Dask Dataframe"
+                },
+                {
+                  "name": "infer_type",
+                  "type": "boolean",
+                  "label": "Infer types"
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                }
+              ],
+              "click": "Send file",
+              "icon": "RiFileChart2Fill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "separator": ",",
+                "df": false,
+                "infer_type": false,
+                "propagate": false,
+                "value": {
+                  "name": "iris.csv",
+                  "path": "data/data/iris.csv",
+                  "parent": "data/data",
+                  "isDir": false,
+                  "hidden": false
+                }
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 544.2995396478001,
+            "y": 456.7897008447431
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "b778ca38-5bb2-4195-ba7c-91924df41709",
+          "position": {
+            "x": 1070,
+            "y": 567
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 189,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Imbalanced Data",
+            "events": null,
+            "description": "#### Imbalanced Data",
+            "inputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing",
+                "service": "balance",
+                "to": "balancing"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "target",
+                  "type": "text",
+                  "label": "Target Variable Name",
+                  "helper": "",
+                  "group": "",
+                  "value": "target",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "method",
+                  "type": "select",
+                  "label": "Sampling Method",
+                  "helper": "",
+                  "group": "",
+                  "value": "undersampling",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "undersampling",
+                    "oversampling",
+                    "SMOTE"
+                  ]
+                },
+                {
+                  "name": "random_state",
+                  "type": "number",
+                  "label": "Random State",
+                  "helper": "",
+                  "group": "",
+                  "value": 123,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "auto",
+                    "majority",
+                    "not majority",
+                    "not minority",
+                    "all"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "replacement",
+                  "type": "dynamic",
+                  "label": "Sample with raplacement",
+                  "helper": "",
+                  "group": "",
+                  "value": false,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "boolean",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"oversampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "k_neighbors",
+                  "type": "dynamic",
+                  "label": "K neighbors",
+                  "helper": "",
+                  "group": "",
+                  "value": 5,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "number",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                }
+              ],
+              "click": null,
+              "icon": "RiScales3Fill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "target": "target",
+                "method": "undersampling",
+                "random_state": "123",
+                "sampling_strategy": "auto",
+                "replacement": false
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1070,
+            "y": 567
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "fa3ace84-a325-46a7-a66c-b769a2dc13d6",
+          "position": {
+            "x": 1580,
+            "y": 544
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 60,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "microservice": "predictor",
+            "name": "Predictor",
+            "events": {
+              "type": "predictor",
+              "field": "predictor"
+            },
+            "description": "### Description\nThe PREDICTOR component is one of the most sophisticated in Loko AI, and deals with the training, prediction and evaluation of ML models. \n\nIts configuration and function in the flow are described below to give the user a general understanding of how this can be used.\n\n### Input\nTo transmit the data of the PREDICTOR component as input, you can operate in two ways, choosing to set the parameter **Stream Data** to **True** or **False**.\n\nIn the first case it is possible to pass the samples one at a time: in this way the data will be passed as dictionaries:\n```json\n{\"data\": {\"text\":\"Today is a beautiful day\"}, \"target\": \"class01\"}\n```\n\nIn the second case, ie by setting this parameter as False, the data will be transmitted all at once as a list of dictionaries:\n```json\n{\"data\": [{\"text\":\"Today is a beautiful day\"}, {\"text\":\"Today is a bad day\"}], \"target\": [\"class01\",\"class02\"]}\n```\n\nAnother parameter related to data input is target.\n\nBy setting the name of the target variable, there is no need to split the variables into date and target.\n\nSupposing to read a line of a csv as:\n```json\n{\"text\":\"Today is a beautiful day\", \"label\": \"class01\"}\n```\n\nsetting the target variable to label, the PREDICTOR component will automatically interpret all variables other than the target variable as explanatory and the variable label as the response variable. In this way it is not necessary to divide the data in the two keys before hand data and target.\n\nAs for fit and evaluate of PREDICTOR, it is necessary to supply both the variable data and the variable target.\n\nConversely, as far as concerned Predict is, the target variable is not required.\n\n### Output\nThe output of theservice fit will only provide as response: Job submitted.\n\nThis means that the PREDICTOR training has started correctly. You will be able to check the results obtained through the appropriate dashboard.\n\nAs for the predict, the output is the following:\n```json\n{\"prediction\": \"class01\", \"object\": {\"text\":\"Today is a beautiful day\"}}\n```\n\nFinally, the evaluate has a more complex:\n```json\n{\"tdist\": distribution of the target variable provided\n \"report_test\": metrics used for the evaluation of the model (vary according to the task)\n \"datetime\": date and time\n \"task\": classification or regression\n}\n```",
+            "inputs": [
+              {
+                "id": "fit",
+                "label": "fit"
+              },
+              {
+                "id": "predict",
+                "label": "predict"
+              },
+              {
+                "id": "evaluate",
+                "label": "evaluate"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "fit",
+                "label": "fit"
+              },
+              {
+                "id": "predict",
+                "label": "predict"
+              },
+              {
+                "id": "evaluate",
+                "label": "evaluate"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "DS4Biz",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "service",
+                  "type": "service",
+                  "label": "Available services",
+                  "fragment": "predictor",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "predictor",
+                  "type": "dynamic",
+                  "dynamicType": "dependent",
+                  "parent": "service",
+                  "label": "Predictors",
+                  "fragment": "predictors",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "stream",
+                  "type": "boolean",
+                  "label": "Stream data"
+                },
+                {
+                  "name": "target_y",
+                  "type": "text",
+                  "label": "Target name",
+                  "helper": "Name of the features you want to estimate, if not specified the default feature name is \"target\""
+                },
+                {
+                  "name": "partial_fit",
+                  "type": "boolean",
+                  "label": "Partial fit",
+                  "group": "Fit parameters"
+                },
+                {
+                  "name": "save_dataset",
+                  "type": "select",
+                  "options": [
+                    "yes",
+                    "no"
+                  ],
+                  "label": "Save dataset",
+                  "helper": "save testset to compute the metrics report for partial fit task",
+                  "group": "Fit parameters"
+                },
+                {
+                  "name": "report",
+                  "type": "boolean",
+                  "label": "Compute metrics report",
+                  "group": "Fit parameters"
+                },
+                {
+                  "name": "test_size",
+                  "type": "dynamic",
+                  "dynamicType": "select",
+                  "parent": "report",
+                  "condition": "{parent}===true",
+                  "options": [
+                    0.1,
+                    0.2,
+                    0.3,
+                    0.4,
+                    0.5
+                  ],
+                  "label": "Test size",
+                  "group": "Fit parameters"
+                },
+                {
+                  "name": "cv",
+                  "dynamicType": "select",
+                  "parent": "report",
+                  "condition": "{parent}===true",
+                  "type": "select",
+                  "options": [
+                    0,
+                    2,
+                    3,
+                    4,
+                    5
+                  ],
+                  "label": "Number of folds used for cross-validation",
+                  "group": "Fit parameters"
+                },
+                {
+                  "name": "history_limit",
+                  "type": "select",
+                  "options": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10
+                  ],
+                  "label": "Number of models to keep saved",
+                  "group": "Fit parameters"
+                },
+                {
+                  "name": "fit_params",
+                  "type": "area",
+                  "label": "Additional fit parameters",
+                  "group": "Fit parameters"
+                },
+                {
+                  "name": "include_probs",
+                  "type": "boolean",
+                  "label": "Predict proba",
+                  "group": "Predict parameters"
+                },
+                {
+                  "name": "predict_branch",
+                  "type": "select",
+                  "options": [
+                    "development",
+                    "master"
+                  ],
+                  "label": "Branch",
+                  "helper": "fit task automatically saves model on development branch",
+                  "group": "Predict parameters"
+                },
+                {
+                  "name": "limit",
+                  "type": "select",
+                  "options": [
+                    -1,
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10
+                  ],
+                  "label": "Limit",
+                  "helper": "set to 0 to evalute only last model, set to -1 to evaluate all models in history",
+                  "group": "Evaluate parameters"
+                },
+                {
+                  "name": "eval_branch",
+                  "type": "select",
+                  "options": [
+                    "development",
+                    "master"
+                  ],
+                  "label": "Branch",
+                  "helper": "fit task automatically saves model on development branch",
+                  "group": "Evaluate parameters"
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                }
+              ],
+              "click": null,
+              "icon": "RiTyphoonFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "stream": false,
+                "target_y": "target",
+                "propagate": true,
+                "partial_fit": false,
+                "save_dataset": "no",
+                "report": true,
+                "cv": "0",
+                "history_limit": "0",
+                "fit_params": "{}",
+                "include_probs": false,
+                "predict_branch": "development",
+                "limit": "0",
+                "eval_branch": "development",
+                "test_size": "0.2",
+                "service": "predictor",
+                "predictor": "iris_balanced"
+              }
+            },
+            "disabled": false,
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1580,
+            "y": 544
+          },
+          "__class__": "Node"
         }
       ],
       "edges": [
@@ -307,6 +1182,48 @@
           "data": {
             "startColor": "#D770AD",
             "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-dfb7d559-1b5e-4364-bdac-6bbee9c74888output-007df25a-0c9d-4e92-a652-919b5f62684dinput",
+          "source": "dfb7d559-1b5e-4364-bdac-6bbee9c74888",
+          "sourceHandle": "output",
+          "target": "007df25a-0c9d-4e92-a652-919b5f62684d",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#F8637A",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-007df25a-0c9d-4e92-a652-919b5f62684doutput-b778ca38-5bb2-4195-ba7c-91924df41709balancing",
+          "source": "007df25a-0c9d-4e92-a652-919b5f62684d",
+          "sourceHandle": "output",
+          "target": "b778ca38-5bb2-4195-ba7c-91924df41709",
+          "targetHandle": "balancing",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-b778ca38-5bb2-4195-ba7c-91924df41709balancing-fa3ace84-a325-46a7-a66c-b769a2dc13d6fit",
+          "source": "b778ca38-5bb2-4195-ba7c-91924df41709",
+          "sourceHandle": "balancing",
+          "target": "fa3ace84-a325-46a7-a66c-b769a2dc13d6",
+          "targetHandle": "fit",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#FFB300"
           },
           "selected": false,
           "dragging": false,

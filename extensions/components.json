@@ -23,12 +23,23 @@
   ],
   "options": {
    "values": {
+    "target": "target",
     "method": "undersampling",
     "random_state": 123,
     "sampling_strategy": "auto",
     "k_neighbors": 5
    },
    "args": [
+    {
+     "name": "target",
+     "type": "text",
+     "label": "Target Variable Name",
+     "helper": "",
+     "group": "",
+     "value": "target",
+     "description": "",
+     "validation": null
+    },
     {
      "name": "method",
      "type": "select",

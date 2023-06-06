@@ -3,4 +3,5 @@ imbalanced-learn
 loguru
 loko-client
 loko-extensions
+pandas
 uvicorn
