@@ -3,7 +3,7 @@
   "id": "imbalanced_data_extension",
   "description": "",
   "created_on": "05/06/2023, 14:06:03",
-  "last_modify": "06/06/2023, 10:33:13",
+  "last_modify": "06/06/2023, 15:36:32",
   "graphs": {
     "main": {
       "nodes": [
@@ -581,8 +581,8 @@
         {
           "id": "dfb7d559-1b5e-4364-bdac-6bbee9c74888",
           "position": {
-            "x": 544.2995396478001,
-            "y": 456.7897008447431
+            "x": 459.2995396478001,
+            "y": 436.7897008447431
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -682,16 +682,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 544.2995396478001,
-            "y": 456.7897008447431
+            "x": 459.2995396478001,
+            "y": 436.7897008447431
           },
           "__class__": "Node"
         },
         {
           "id": "b778ca38-5bb2-4195-ba7c-91924df41709",
           "position": {
-            "x": 1070,
-            "y": 567
+            "x": 699,
+            "y": 563
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -893,16 +893,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1070,
-            "y": 567
+            "x": 699,
+            "y": 563
           },
           "__class__": "Node"
         },
         {
           "id": "fa3ace84-a325-46a7-a66c-b769a2dc13d6",
           "position": {
-            "x": 1580,
-            "y": 544
+            "x": 1579,
+            "y": 533
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -923,7 +923,8 @@
             "inputs": [
               {
                 "id": "fit",
-                "label": "fit"
+                "label": "fit",
+                "closed": true
               },
               {
                 "id": "predict",
@@ -1166,9 +1167,1055 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1580,
-            "y": 544
+            "x": 1579,
+            "y": 533
           },
+          "__class__": "Node"
+        },
+        {
+          "id": "2a92af27-18ad-4281-8def-731c1b7a5c1f",
+          "position": {
+            "x": 1231,
+            "y": 697
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Grouper",
+            "events": null,
+            "description": "### Description\nThe GROUPER component is used to group the elements received in input. The items will be returned in batches with a maximum size equal to **Group size**.\n\n### Input\nIn this case there is no fixed input format.\n\n### Output\nIn output lists of elements received in input with a maximum length equal to **Group size**.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input",
+                "closed": false
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "n",
+                  "label": "Group size",
+                  "type": "number"
+                }
+              ],
+              "click": null,
+              "icon": "RiGroupFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "n": "100000"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1231,
+            "y": 697
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "f85db464-7c7d-47cb-8cad-5846a1d089ec",
+          "position": {
+            "x": 986.2995396478001,
+            "y": 702.789700844743
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "CSV Reader",
+            "events": null,
+            "description": "### Description\nThe CSV READER component allows reading files in csv format. \n\nYou have the possibility to set a separator using the **Separator** parameter. The **Infer types** parameter allows the automatic transformation of the type of non-textual fields.\n\n### Input\nThe input required by this component is the file path in PosixPath format. However, the file path can also be defined when the component is created, in which case no input is required.\n\n### Output\nThe submitted file is returned row by row, where each row is represented by a dictionary that has the column names as keys.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Inputs",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "value",
+                  "type": "files",
+                  "label": "File",
+                  "fragment": "files",
+                  "helper": "choose a file or read input"
+                },
+                {
+                  "name": "separator",
+                  "type": "text",
+                  "label": "Separator"
+                },
+                {
+                  "name": "df",
+                  "type": "boolean",
+                  "label": "Dask Dataframe"
+                },
+                {
+                  "name": "infer_type",
+                  "type": "boolean",
+                  "label": "Infer types"
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                }
+              ],
+              "click": "Send file",
+              "icon": "RiFileChart2Fill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "separator": ",",
+                "df": false,
+                "infer_type": false,
+                "propagate": false,
+                "value": {
+                  "name": "iris.csv",
+                  "path": "data/data/iris.csv",
+                  "parent": "data/data",
+                  "isDir": false,
+                  "hidden": false
+                }
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 986.2995396478001,
+            "y": 702.789700844743
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "02cbb82f-7ccb-4b18-b6fd-cb6397e3e35d",
+          "position": {
+            "x": 1378,
+            "y": 819
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 189,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Imbalanced Data",
+            "events": null,
+            "description": "#### Imbalanced Data",
+            "inputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing",
+                "service": "balance",
+                "to": "balancing"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "target",
+                  "type": "text",
+                  "label": "Target Variable Name",
+                  "helper": "",
+                  "group": "",
+                  "value": "target",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "method",
+                  "type": "select",
+                  "label": "Sampling Method",
+                  "helper": "",
+                  "group": "",
+                  "value": "undersampling",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "undersampling",
+                    "oversampling",
+                    "SMOTE"
+                  ]
+                },
+                {
+                  "name": "random_state",
+                  "type": "number",
+                  "label": "Random State",
+                  "helper": "",
+                  "group": "",
+                  "value": 123,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "auto",
+                    "majority",
+                    "not majority",
+                    "not minority",
+                    "all"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "replacement",
+                  "type": "dynamic",
+                  "label": "Sample with raplacement",
+                  "helper": "",
+                  "group": "",
+                  "value": false,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "boolean",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"oversampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "k_neighbors",
+                  "type": "dynamic",
+                  "label": "K neighbors",
+                  "helper": "",
+                  "group": "",
+                  "value": 5,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "number",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                }
+              ],
+              "click": null,
+              "icon": "RiScales3Fill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "target": "target",
+                "method": "oversampling",
+                "random_state": "123",
+                "sampling_strategy": "auto"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1378,
+            "y": 819
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "d004e629-dce0-4585-b082-53c919143695",
+          "position": {
+            "x": 1117,
+            "y": 930
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": null,
+          "dragging": null,
+          "data": {
+            "name": "Imbalanced Data",
+            "events": null,
+            "description": "#### Imbalanced Data",
+            "inputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing",
+                "service": "balance",
+                "to": "balancing"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "target",
+                  "type": "text",
+                  "label": "Target Variable Name",
+                  "helper": "",
+                  "group": "",
+                  "value": "target",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "method",
+                  "type": "select",
+                  "label": "Sampling Method",
+                  "helper": "",
+                  "group": "",
+                  "value": "undersampling",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "undersampling",
+                    "oversampling",
+                    "SMOTE"
+                  ]
+                },
+                {
+                  "name": "random_state",
+                  "type": "number",
+                  "label": "Random State",
+                  "helper": "",
+                  "group": "",
+                  "value": 123,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "auto",
+                    "majority",
+                    "not majority",
+                    "not minority",
+                    "all"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "replacement",
+                  "type": "dynamic",
+                  "label": "Sample with raplacement",
+                  "helper": "",
+                  "group": "",
+                  "value": false,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "boolean",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"oversampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "k_neighbors",
+                  "type": "dynamic",
+                  "label": "K neighbors",
+                  "helper": "",
+                  "group": "",
+                  "value": 5,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "number",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                }
+              ],
+              "click": null,
+              "icon": "RiScales3Fill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "target": "target",
+                "method": "undersampling",
+                "random_state": "123",
+                "sampling_strategy": "auto",
+                "replacement": false
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "__class__": "Node"
+        },
+        {
+          "id": "c95757f6-d48f-4354-9692-d1365afdb515",
+          "position": {
+            "x": 805,
+            "y": 949
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": null,
+          "dragging": null,
+          "data": {
+            "pname": "loko-textractor",
+            "name": "Textract",
+            "events": null,
+            "description": "### Description\nThe TEXTRACT component allows you to use OCR technologies to extract textual content - from machine-readable documents - images or mixed content. One of TEXTRACT's embedded technologies is Tesseract 4, which offers the possibility to improve the process of recognition of characters and words through the use of an LSTM neural network (as default). If you want, you can also create your own settings and modify both the OCR engine and the pre-processing that must be applied to the input files.\n\n### Input\n\n\nTEXTRACT has three different input:\n- OCR Extraction\n- Settings\n- Delete Settings\n\n**OCR Extraction:** generally, a FileReader component must be linked to this input, and the service will directly extract the text from the input file. You can decide if you want a plain text (\"plain/text\") or in a json format(\u201capplication/json\u201d) which will treat separately each page, by selecting in the **\u201cAccept\u201d** field the formats which suits you the most: this parameter changes your output type. Accepted file extension: jpeg, docx, pdf, txt, jpg, png, eml.\n\n\n**Settings:** a trigger must be linked to this input, and using the designed parameters it's possible to create an analyzer or a pre-processing setting. The analyzer will change the OCR parameter,  whilst the pre-processing will change the way in which the file will be \"seen\" by the OCR engine. Once a setting is created, in order to be used in an extraction you need to specify it in the OCR Extraction parameters.\n\n\n**Delete Settings:** if you want to delete an already created settings you can link a trigger to this input and specify which settings you want to delete. Warning: this action is permanent.\n\n\n\n### Output\nThe output of the extraction service is a json composed of the key\u201c text \u201dand the text extracted from the submitted document as a value.\n\n**OCR Extraction:** the output of this service depends on the type of \u201caccept\u201d chosen: \n\n\n\n- In case *\u201cplain/text\u201d* is chosen, the output will be a json composed of the key \u201cpath\u201d, which as value will have the path of the examined file, and the key \"text\"  which will contain the text extracted from the submitted document. You can see an example below:\n\n\n```json\n{\"path\": \"path/to_the/file.extension\"\n\"text\": \"Lorem ipsum Lorem ipsum\"}\n```\n\n- If instead you selected *\u201capplication/json\u201d* as accepted value, your output will have the key \u201cpath\u201d, with the path of the examined file as value, and the key \u201ccontent\u201d which will have as value a list of two keys (\u201cpage\u201d and \u201ctext\u201d) for each page present in the document examined. The \u201cpage\u201d key will have as value an integer number, representing the position (the numeration starts from 0),  and the \u201ctext\u201d key the extracted text for the relative page. Here an example:\n\n```json\n{ \"path\": \"path/to_the/file.extension\"\n\"content\": [{\"page\": 0, \n            \"text\": \"Lorem ipsum Lorem ipsum\"},\n            {\"page\": 1, \n             \"text\": \"Lorem ipsum Lorem ipsum\"},\n            {\"page\": 2, \n             \"text\": \"Lorem ipsum Lorem ipsum\"}]\n}\n```\n\n\n**Settings:** this output will only be a message which declares the setting creation.\n\n\n\n**Delete Settings:** this output will only be a message which declares the setting creation. \n\n\n",
+            "inputs": [
+              {
+                "id": "ocr_extraction",
+                "label": "ocr_extraction",
+                "service": "loko_extract",
+                "to": "ocr_extraction"
+              },
+              {
+                "id": "hocr_extraction",
+                "label": "hocr_extraction",
+                "service": "loko_hocr",
+                "to": "hocr_extraction"
+              },
+              {
+                "id": "settings",
+                "label": "settings",
+                "service": "loko_settings",
+                "to": "settings"
+              },
+              {
+                "id": "delete_settings",
+                "label": "delete_settings",
+                "service": "loko_delete_settings",
+                "to": "delete_settings"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "ocr_extraction",
+                "label": "ocr_extraction"
+              },
+              {
+                "id": "hocr_extraction",
+                "label": "hocr_extraction"
+              },
+              {
+                "id": "settings",
+                "label": "settings"
+              },
+              {
+                "id": "delete_settings",
+                "label": "delete_settings"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "force_ocr",
+                  "type": "boolean",
+                  "label": "Force OCR",
+                  "helper": "",
+                  "group": "OCR Extraction",
+                  "value": false,
+                  "description": "If True, even if the document is machine readable the OCR engine will be used",
+                  "validation": null
+                },
+                {
+                  "name": "analyzer",
+                  "type": "asyncSelect",
+                  "label": "Analyzer",
+                  "helper": "Select an analyzer, if not set the default analyzer settings will be used",
+                  "group": "OCR Extraction",
+                  "value": null,
+                  "description": "An analyzer object is compose of different configurations to run the tesseract engine",
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/loko-textractor/ds4biz/textract/0.1/analyzer"
+                },
+                {
+                  "name": "preprocessing",
+                  "type": "asyncSelect",
+                  "label": "Preprocessing",
+                  "helper": "Select a preprocessing, if not set no pre-processing will be done",
+                  "group": "OCR Extraction",
+                  "value": null,
+                  "description": "A preprocessing object is compose of different configurations to prepare the input image",
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/loko-textractor/ds4biz/textract/0.1/preprocessing"
+                },
+                {
+                  "name": "accept",
+                  "type": "select",
+                  "label": "Accept",
+                  "helper": "Select an output format, default='plain/text'",
+                  "group": "OCR Extraction",
+                  "value": "application/json",
+                  "description": "format and content type of the output",
+                  "validation": null,
+                  "options": [
+                    "application/json",
+                    "plain/text",
+                    "application/jsonl"
+                  ]
+                },
+                {
+                  "name": "settings_type",
+                  "type": "select",
+                  "label": "Settings Type",
+                  "helper": "Select configuration type",
+                  "group": "Custom Settings",
+                  "value": null,
+                  "description": "You can choose between Analyzer or Preprocessing object in order to create a new custom configuration",
+                  "validation": null,
+                  "options": [
+                    "Analyzer",
+                    "Pre-Processing"
+                  ]
+                },
+                {
+                  "name": "new_analyzer_name",
+                  "type": "dynamic",
+                  "label": "Name",
+                  "helper": "Name of the new analyzer",
+                  "group": "Custom Settings",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "settings_type",
+                  "condition": "{parent}===\"Analyzer\"",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "oem_type",
+                  "type": "dynamic",
+                  "label": "OEM",
+                  "helper": "OCR Engine Mode to use ",
+                  "group": "Custom Settings",
+                  "value": "1: neural nets LSTM engine only",
+                  "description": "",
+                  "validation": null,
+                  "parent": "settings_type",
+                  "condition": "{parent}===\"Analyzer\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "0: legacy engine only",
+                    "1: neural nets LSTM engine only",
+                    "2: legacy + LSTM engines",
+                    "3: default, based on what is available"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "psm_type",
+                  "type": "dynamic",
+                  "label": "PSM",
+                  "helper": "Page Segmentation Mode to use",
+                  "group": "Custom Settings",
+                  "value": "1: automatic page segmentation with OSD",
+                  "description": "",
+                  "validation": null,
+                  "parent": "settings_type",
+                  "condition": "{parent}===\"Analyzer\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "0: orientation and script detection (OSD) only",
+                    "1: automatic page segmentation with OSD",
+                    "2: automatic page segmentation, but no OSD, or OCR",
+                    "3: fully automatic page segmentation, but no OSD",
+                    "4: assume a single column of text of variable sizes",
+                    "5: assume a single uniform block of vertically aligned text",
+                    "6: assume a single uniform block of text",
+                    "7: treat the image as a single text line",
+                    "8: treat the image as a single word",
+                    "9: treat the image as a single word in a circle",
+                    "10: treat the image as a single character",
+                    "11: sparse text. Find as much text as possible in no particular order",
+                    "12: sparse text with OSD",
+                    "13: raw line. Treat the image as a single text line, bypassing hacks that are Tesseract-specific"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "lang",
+                  "type": "dynamic",
+                  "label": "Language",
+                  "helper": "If auto the language will be detected, otherwise you can select italian or english.",
+                  "group": "Custom Settings",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "settings_type",
+                  "condition": "{parent}===\"Analyzer\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "auto",
+                    "ita",
+                    "eng"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "whitelist",
+                  "type": "dynamic",
+                  "label": "Character Whitelist ",
+                  "helper": "Inser characters",
+                  "group": "Custom Settings",
+                  "value": null,
+                  "description": "The only characters that the OCR engine is allowed to recognize. All the characters must be write without separator",
+                  "validation": null,
+                  "parent": "settings_type",
+                  "condition": "{parent}===\"Analyzer\"",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "blacklist",
+                  "type": "dynamic",
+                  "label": "Character Blacklist ",
+                  "helper": "Inser characters",
+                  "group": "Custom Settings",
+                  "value": null,
+                  "description": "Characters that must never be included in the results. All the characters must be write without separator",
+                  "validation": null,
+                  "parent": "settings_type",
+                  "condition": "{parent}===\"Analyzer\"",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "vocab_file",
+                  "type": "dynamic",
+                  "label": "Vocabulary File Name",
+                  "helper": "Select the vocabulary file",
+                  "group": "Custom Settings",
+                  "value": null,
+                  "description": "vocabulary file list of tokens that helps the token recognition process",
+                  "validation": null,
+                  "parent": "settings_type",
+                  "condition": "{parent}===\"Analyzer\"",
+                  "dynamicType": "files",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "patterns_file",
+                  "type": "dynamic",
+                  "label": "Patterns File Name",
+                  "helper": "Select the patterns file",
+                  "group": "Custom Settings",
+                  "value": null,
+                  "description": "Patterns file that helps the token recognition process",
+                  "validation": null,
+                  "parent": "settings_type",
+                  "condition": "{parent}===\"Analyzer\"",
+                  "dynamicType": "files",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "new_preprocessing_name",
+                  "type": "dynamic",
+                  "label": "Name",
+                  "helper": "Name of the pre-processing custom settings",
+                  "group": "Custom Settings",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "settings_type",
+                  "condition": "{parent}===\"Pre-Processing\"",
+                  "dynamicType": "text",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "dpi",
+                  "type": "dynamic",
+                  "label": "DPI",
+                  "helper": "DPI value to use when processing files",
+                  "group": "Custom Settings",
+                  "value": "200",
+                  "description": "",
+                  "validation": null,
+                  "parent": "settings_type",
+                  "condition": "{parent}===\"Pre-Processing\"",
+                  "dynamicType": "number",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "zoom",
+                  "type": "dynamic",
+                  "label": "Apply Zoom",
+                  "helper": "",
+                  "group": "Custom Settings",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "parent": "settings_type",
+                  "condition": "{parent}===\"Pre-Processing\"",
+                  "dynamicType": "boolean",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "zoom_level",
+                  "type": "dynamic",
+                  "label": "Zoom Level",
+                  "helper": "If the zoom rate level is set to a lower value than 1.0 the image will be shrinked, otherwise the image will be enlarged",
+                  "group": "Custom Settings",
+                  "value": "1.3",
+                  "description": "",
+                  "validation": null,
+                  "parent": "zoom",
+                  "condition": "{parent}===true",
+                  "dynamicType": "number",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "interpolation_mode",
+                  "type": "dynamic",
+                  "label": "Interpolation Mode",
+                  "helper": "Interpolation algorithm",
+                  "group": "Custom Settings",
+                  "value": "1: INTER_LINEAR",
+                  "description": "In case of Zoom-In the image will generally look best with INTER_CUBIC mode (slow) or INTER_LINEAR (faster but still looks good); In case of Zoom-Out the mode INTER_AREA generally works better",
+                  "validation": null,
+                  "parent": "zoom",
+                  "condition": "{parent}===true",
+                  "dynamicType": "select",
+                  "options": [
+                    "0: INTER_NEAREST",
+                    "1: INTER_LINEAR",
+                    "2: INTER_CUBIC",
+                    "3: INTER_AREA",
+                    "4: INTER_LANCZOS4",
+                    "7: INTER_MAX",
+                    "8: WARP_FILL_OUTLIERS",
+                    "16: WARP_INVERSE_MAP"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "analyzer_name_delete",
+                  "type": "asyncSelect",
+                  "label": "Analyzer Settings Name",
+                  "helper": "Name of the custom settings you want to delete",
+                  "group": "Delete Settings",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/loko-textractor/ds4biz/textract/0.1/analyzer"
+                },
+                {
+                  "name": "preproc_name_delete",
+                  "type": "asyncSelect",
+                  "label": "Pre-Processing Settings Name",
+                  "helper": "Name of the custom settings you want to delete",
+                  "group": "Delete Settings",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/loko-textractor/ds4biz/textract/0.1/preprocessing"
+                },
+                {
+                  "name": "accept_hocr",
+                  "type": "select",
+                  "label": "Accept",
+                  "helper": "Select an output format, default='application/json'",
+                  "group": "HOCR Extraction",
+                  "value": "application/json",
+                  "description": "format and content type of the output",
+                  "validation": null,
+                  "options": [
+                    "application/json",
+                    "text/html"
+                  ]
+                }
+              ],
+              "click": null,
+              "icon": "RiBubbleChartLine",
+              "values": {
+                "accept": "application/json",
+                "oem_type": "1: neural nets LSTM engine only",
+                "psm_type": "1: automatic page segmentation with OSD",
+                "lang": "auto",
+                "dpi": "200",
+                "zoom_level": "1.3",
+                "interpolation_mode": "1: INTER_LINEAR",
+                "accept_hocr": "application/json"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
           "__class__": "Node"
         }
       ],
@@ -1224,6 +2271,48 @@
           "data": {
             "startColor": "#888",
             "stopColor": "#FFB300"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-b778ca38-5bb2-4195-ba7c-91924df41709balancing-fa3ace84-a325-46a7-a66c-b769a2dc13d6evaluate",
+          "source": "b778ca38-5bb2-4195-ba7c-91924df41709",
+          "sourceHandle": "balancing",
+          "target": "fa3ace84-a325-46a7-a66c-b769a2dc13d6",
+          "targetHandle": "evaluate",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#FFB300"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "37a90097-5bdf-44eb-8756-f0ef2d35334e",
+          "source": "f85db464-7c7d-47cb-8cad-5846a1d089ec",
+          "sourceHandle": "output",
+          "target": "2a92af27-18ad-4281-8def-731c1b7a5c1f",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#F8637A",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "f65e4050-dec6-499a-b85e-109bc09720a3",
+          "source": "2a92af27-18ad-4281-8def-731c1b7a5c1f",
+          "sourceHandle": "output",
+          "target": "02cbb82f-7ccb-4b18-b6fd-cb6397e3e35d",
+          "targetHandle": "balancing",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
           },
           "selected": false,
           "dragging": false,

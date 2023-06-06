@@ -22,7 +22,7 @@ class Resampler:
         self.__dict__.update(kwargs)
 
     def _oversampler_definition(self):
-        ros = RandomOverSampler(random_state=self.random_state, sampling_strategy=self.sampling_strategy, shrinkage=self.shrinkage)
+        ros = RandomOverSampler(random_state=self.random_state, sampling_strategy=self.sampling_strategy)#, shrinkage=self.shrinkage
         return ros
 
     def _undersampling_definition(self):
