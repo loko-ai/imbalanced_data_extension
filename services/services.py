@@ -16,7 +16,7 @@ app = FastAPI(docs_url="/api")
 @app.post("/balance")
 @ExtractValueArgsFastapi(file=False)
 def text_generator_api(value, args):
-    logger.debug(f"args::: {args}")
+    # logger.debug(f"args::: {args}")
     target = args.get("target", "target")
     method = args.get("method", "undersampling")
     sampling_strategy = args.get("sampling_strategy", "auto")

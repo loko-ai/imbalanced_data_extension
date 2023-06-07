@@ -16,7 +16,7 @@ class ExtractValueArgsFastapi:
         self.file = file
 
     def __call__(self, f):
-        logger.debug(f"file {self.file}")
+        # logger.debug(f"file {self.file}")
         # @functools.wraps(f) # tolto perchè ci obbligava a tipizzare dentro fastAPI
         def extract_file_args(file: UploadFile = File(), args: bytes = File()):
             args = json.loads(args.decode())
@@ -24,14 +24,14 @@ class ExtractValueArgsFastapi:
         # extract_file_args.__name__ = f.__name__
 
         def extract_value_args(value_args: ValueArgs):
-            logger.debug(f"value::: {value_args}")
+            # logger.debug(f"value::: {value_args}")
             value = value_args.value
             args = value_args.args
             return f(value=value, args=args)
         # extract_value_args.__name__ = f.__name__
 
         if self.file:
-            logger.debug('File')
+            # logger.debug('File')
             return extract_file_args
         else:
             return extract_value_args
