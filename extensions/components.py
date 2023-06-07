@@ -3,7 +3,7 @@ from loko_extensions.model.components import Select, Dynamic, Input, Output, Com
 imbalanced_data_description = """#### Imbalanced Data"""
 
 target = Arg(name="target", label="Target Variable Name", type="text", value="target")
-method = Select(name="method", label="Sampling Method", options=["undersampling", "oversampling", "SMOTE"],
+method = Select(name="method", label="Sampling Method", options=["undersampling", "oversampling", "SMOTE", "SMOTEN"],
                 value="undersampling")
 random_state = Arg(name="random_state", label="Random State", type="number", value=123)
 sampling_strategy_under = Dynamic(name="sampling_strategy", label="Sampling Strategy", dynamicType="select",
@@ -23,7 +23,14 @@ sampling_strategy_smote = Dynamic(name="sampling_strategy", label="Sampling Stra
 k_neighbors = Dynamic(name="k_neighbors", label="K neighbors", dynamicType="number", parent="method", value=5,
                       condition='{parent}=="SMOTE"')
 
-args = [target, method, random_state, sampling_strategy_under, replacement, sampling_strategy_over, sampling_strategy_smote, k_neighbors]
+sampling_strategy_smoten = Dynamic(name="sampling_strategy", label="Sampling Strategy", dynamicType="select",
+                                  options=['all', 'auto', 'not minority', 'not majority', 'minority'], value="auto", parent="method",
+                                  condition='{parent}=="SMOTEN"')
+
+k_neighbors_smoten = Dynamic(name="k_neighbors", label="K neighbors", dynamicType="number", parent="method", value=5,
+                      condition='{parent}=="SMOTEN"')
+
+args = [target, method, random_state, sampling_strategy_under, replacement, sampling_strategy_over, sampling_strategy_smote, k_neighbors, sampling_strategy_smoten, k_neighbors_smoten]
 input_list = [Input(id="balancing", label="Balancing", to="balancing", service="balance")]
 output_list = [Output(id="balancing", label="Balancing")]
 text_gen_component = Component(name="Imbalanced Data", inputs=input_list, outputs=output_list, args=args,

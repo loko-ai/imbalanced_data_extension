@@ -1,4 +1,4 @@
-from imblearn.over_sampling import RandomOverSampler, SMOTE
+from imblearn.over_sampling import RandomOverSampler, SMOTE, SMOTEN
 from imblearn.under_sampling import RandomUnderSampler
 
 
@@ -33,6 +33,10 @@ class Resampler:
         sm = SMOTE(random_state=self.random_state, sampling_strategy=self.sampling_strategy, k_neighbors = self.k_neighbors)
         return sm
 
+    def _smoten_definition(self):
+        sm = SMOTEN(random_state=self.random_state, sampling_strategy=self.sampling_strategy, k_neighbors = self.k_neighbors)
+        return sm
+
     def __call__(self, X, y, *args, **kwargs):
         if self.method=="undersampling":
             self.sampler = self._undersampling_definition()
@@ -40,6 +44,8 @@ class Resampler:
             self.sampler = self._oversampler_definition()
         elif self.method=="SMOTE":
             self.sampler = self._smote_definition()
+        elif self.method=="SMOTEN":
+            self.sampler = self._smoten_definition()
         X_sampled, y_sampled = self.sampler.fit_resample(X, y)
         return X_sampled, y_sampled
 

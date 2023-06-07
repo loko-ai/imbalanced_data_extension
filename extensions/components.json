@@ -52,7 +52,8 @@
      "options": [
       "undersampling",
       "oversampling",
-      "SMOTE"
+      "SMOTE",
+      "SMOTEN"
      ]
     },
     {
@@ -158,6 +159,44 @@
      "validation": null,
      "parent": "method",
      "condition": "{parent}==\"SMOTE\"",
+     "dynamicType": "number",
+     "options": null,
+     "fields": null,
+     "url": null
+    },
+    {
+     "name": "sampling_strategy",
+     "type": "dynamic",
+     "label": "Sampling Strategy",
+     "helper": "",
+     "group": "",
+     "value": "auto",
+     "description": "",
+     "validation": null,
+     "parent": "method",
+     "condition": "{parent}==\"SMOTEN\"",
+     "dynamicType": "select",
+     "options": [
+      "all",
+      "auto",
+      "not minority",
+      "not majority",
+      "minority"
+     ],
+     "fields": null,
+     "url": null
+    },
+    {
+     "name": "k_neighbors",
+     "type": "dynamic",
+     "label": "K neighbors",
+     "helper": "",
+     "group": "",
+     "value": 5,
+     "description": "",
+     "validation": null,
+     "parent": "method",
+     "condition": "{parent}==\"SMOTEN\"",
      "dynamicType": "number",
      "options": null,
      "fields": null,
