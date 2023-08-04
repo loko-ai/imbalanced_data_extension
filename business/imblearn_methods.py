@@ -5,7 +5,7 @@ from imblearn.under_sampling import RandomUnderSampler
 
 
 # def
-
+from loguru import logger
 
 smote_params = ["sampling_strategy", "k_neighbors"]
 under_params = ["sampling_strategy", "replacement"]
@@ -30,6 +30,7 @@ class Resampler:
         return rus
 
     def _smote_definition(self):
+        logger.debug(f"kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk {self.k_neighbors}")
         sm = SMOTE(random_state=self.random_state, sampling_strategy=self.sampling_strategy, k_neighbors = self.k_neighbors)
         return sm
 
@@ -46,6 +47,10 @@ class Resampler:
             self.sampler = self._smote_definition()
         elif self.method=="SMOTEN":
             self.sampler = self._smoten_definition()
+        else:
+            raise Exception(f"No sampling method specified or method not yet supported... Method name: {self.method}")
+        from collections import Counter
+
         X_sampled, y_sampled = self.sampler.fit_resample(X, y)
         return X_sampled, y_sampled
 

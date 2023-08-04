@@ -3,7 +3,7 @@
   "id": "imbalanced_data_extension",
   "description": "",
   "created_on": "05/06/2023, 14:06:03",
-  "last_modify": "07/06/2023, 10:40:48",
+  "last_modify": "04/08/2023, 10:43:24",
   "graphs": {
     "main": {
       "nodes": [
@@ -303,8 +303,8 @@
         {
           "id": "007df25a-0c9d-4e92-a652-919b5f62684d",
           "position": {
-            "x": 789,
-            "y": 451
+            "x": 726,
+            "y": 464
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -364,7 +364,7 @@
               "values": {
                 "comment": "",
                 "alias": "",
-                "debug": true,
+                "debug": false,
                 "n": "100000"
               }
             },
@@ -373,16 +373,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 789,
-            "y": 451
+            "x": 726,
+            "y": 464
           },
           "__class__": "Node"
         },
         {
           "id": "846a6f32-ac27-43fd-a7d3-41d23d94e00a",
           "position": {
-            "x": 1274.0309648099635,
-            "y": 416.87575581182136
+            "x": 1527.0309648099635,
+            "y": 208.87575581182136
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -573,8 +573,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1274.0309648099635,
-            "y": 416.87575581182136
+            "x": 1527.0309648099635,
+            "y": 208.87575581182136
           },
           "__class__": "Node"
         },
@@ -582,7 +582,7 @@
           "id": "dfb7d559-1b5e-4364-bdac-6bbee9c74888",
           "position": {
             "x": 459.2995396478001,
-            "y": 436.7897008447431
+            "y": 450.0900630097718
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -683,226 +683,15 @@
           "draggable": true,
           "positionAbsolute": {
             "x": 459.2995396478001,
-            "y": 436.7897008447431
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "b778ca38-5bb2-4195-ba7c-91924df41709",
-          "position": {
-            "x": 699,
-            "y": 563
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 189,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Imbalanced Data",
-            "events": null,
-            "description": "#### Imbalanced Data",
-            "inputs": [
-              {
-                "id": "balancing",
-                "label": "Balancing",
-                "service": "balance",
-                "to": "balancing"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "balancing",
-                "label": "Balancing"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Custom",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "target",
-                  "type": "text",
-                  "label": "Target Variable Name",
-                  "helper": "",
-                  "group": "",
-                  "value": "target",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "method",
-                  "type": "select",
-                  "label": "Sampling Method",
-                  "helper": "",
-                  "group": "",
-                  "value": "undersampling",
-                  "description": "",
-                  "validation": null,
-                  "options": [
-                    "undersampling",
-                    "oversampling",
-                    "SMOTE"
-                  ]
-                },
-                {
-                  "name": "random_state",
-                  "type": "number",
-                  "label": "Random State",
-                  "helper": "",
-                  "group": "",
-                  "value": 123,
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "sampling_strategy",
-                  "type": "dynamic",
-                  "label": "Sampling Strategy",
-                  "helper": "",
-                  "group": "",
-                  "value": "auto",
-                  "description": "",
-                  "validation": null,
-                  "parent": "method",
-                  "condition": "{parent}==\"undersampling\"",
-                  "dynamicType": "select",
-                  "options": [
-                    "auto",
-                    "majority",
-                    "not majority",
-                    "not minority",
-                    "all"
-                  ],
-                  "fields": null,
-                  "url": null
-                },
-                {
-                  "name": "replacement",
-                  "type": "dynamic",
-                  "label": "Sample with raplacement",
-                  "helper": "",
-                  "group": "",
-                  "value": false,
-                  "description": "",
-                  "validation": null,
-                  "parent": "method",
-                  "condition": "{parent}==\"undersampling\"",
-                  "dynamicType": "boolean",
-                  "options": null,
-                  "fields": null,
-                  "url": null
-                },
-                {
-                  "name": "sampling_strategy",
-                  "type": "dynamic",
-                  "label": "Sampling Strategy",
-                  "helper": "",
-                  "group": "",
-                  "value": "auto",
-                  "description": "",
-                  "validation": null,
-                  "parent": "method",
-                  "condition": "{parent}==\"oversampling\"",
-                  "dynamicType": "select",
-                  "options": [
-                    "all",
-                    "auto",
-                    "not minority",
-                    "not majority",
-                    "minority"
-                  ],
-                  "fields": null,
-                  "url": null
-                },
-                {
-                  "name": "sampling_strategy",
-                  "type": "dynamic",
-                  "label": "Sampling Strategy",
-                  "helper": "",
-                  "group": "",
-                  "value": "auto",
-                  "description": "",
-                  "validation": null,
-                  "parent": "method",
-                  "condition": "{parent}==\"SMOTE\"",
-                  "dynamicType": "select",
-                  "options": [
-                    "all",
-                    "auto",
-                    "not minority",
-                    "not majority",
-                    "minority"
-                  ],
-                  "fields": null,
-                  "url": null
-                },
-                {
-                  "name": "k_neighbors",
-                  "type": "dynamic",
-                  "label": "K neighbors",
-                  "helper": "",
-                  "group": "",
-                  "value": 5,
-                  "description": "",
-                  "validation": null,
-                  "parent": "method",
-                  "condition": "{parent}==\"SMOTE\"",
-                  "dynamicType": "number",
-                  "options": null,
-                  "fields": null,
-                  "url": null
-                }
-              ],
-              "click": null,
-              "icon": "RiScales3Fill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "target": "target",
-                "method": "undersampling",
-                "random_state": "123",
-                "sampling_strategy": "auto",
-                "replacement": false
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 699,
-            "y": 563
+            "y": 450.0900630097718
           },
           "__class__": "Node"
         },
         {
           "id": "fa3ace84-a325-46a7-a66c-b769a2dc13d6",
           "position": {
-            "x": 1757,
-            "y": 548
+            "x": 1271,
+            "y": 474
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -924,7 +713,7 @@
               {
                 "id": "fit",
                 "label": "fit",
-                "closed": true
+                "closed": false
               },
               {
                 "id": "predict",
@@ -1167,8 +956,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1757,
-            "y": 548
+            "x": 1271,
+            "y": 474
           },
           "__class__": "Node"
         },
@@ -1596,7 +1385,7 @@
                 "method": "SMOTEN",
                 "random_state": "123",
                 "sampling_strategy": "auto",
-                "k_neighbors": ""
+                "k_neighbors": "5"
               }
             },
             "locked": null
@@ -3117,6 +2906,526 @@
             "y": 1146.999980702065
           },
           "__class__": "Node"
+        },
+        {
+          "id": "4aa14f93-cd87-459c-8805-c3ddb3cd6db2",
+          "position": {
+            "x": 972.8501586037869,
+            "y": 462.8945225671141
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "pname": "imbalanced_data_extension",
+            "fsdao": {
+              "daos": {
+                "data": {
+                  "data": {
+                    "value": {
+                      "base": "/home/loko/loko",
+                      "hidden": {},
+                      "type": null
+                    }
+                  }
+                }
+              }
+            },
+            "name": "Imbalanced Data",
+            "events": null,
+            "description": "#### Imbalanced Data",
+            "inputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing",
+                "service": "balance",
+                "to": "balancing"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing",
+                "closed": false
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "target",
+                  "type": "text",
+                  "label": "Target Variable Name",
+                  "helper": "",
+                  "group": "",
+                  "value": "target",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "method",
+                  "type": "select",
+                  "label": "Sampling Method",
+                  "helper": "",
+                  "group": "",
+                  "value": "undersampling",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "undersampling",
+                    "oversampling",
+                    "SMOTE",
+                    "SMOTEN"
+                  ]
+                },
+                {
+                  "name": "random_state",
+                  "type": "number",
+                  "label": "Random State",
+                  "helper": "",
+                  "group": "",
+                  "value": 123,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "auto",
+                    "majority",
+                    "not majority",
+                    "not minority",
+                    "all"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "replacement",
+                  "type": "dynamic",
+                  "label": "Sample with raplacement",
+                  "helper": "",
+                  "group": "",
+                  "value": false,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "boolean",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"oversampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "k_neighbors",
+                  "type": "dynamic",
+                  "label": "K neighbors",
+                  "helper": "",
+                  "group": "",
+                  "value": 5,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "number",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTEN\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "k_neighbors",
+                  "type": "dynamic",
+                  "label": "K neighbors",
+                  "helper": "",
+                  "group": "",
+                  "value": 5,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTEN\"",
+                  "dynamicType": "number",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                }
+              ],
+              "click": null,
+              "icon": "RiScales3Fill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "target": "target",
+                "method": "SMOTEN",
+                "random_state": "123",
+                "sampling_strategy": "auto",
+                "k_neighbors": "5"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 972.8501586037869,
+            "y": 462.8945225671141
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "b8bbd707-5424-4f09-85a1-ad705a7814b0",
+          "position": {
+            "x": 595,
+            "y": 138
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "fsdao": {
+              "daos": {
+                "data": {
+                  "data": {
+                    "value": {
+                      "base": "/home/loko/loko",
+                      "hidden": {},
+                      "type": null
+                    }
+                  }
+                }
+              }
+            },
+            "name": "Imbalanced Data",
+            "events": null,
+            "description": "\n### Description\n\nBalancing a dataset makes training a model easier as it mitigates the risk of the model becoming biased towards a particular class. Imbalanced Data is the LOKO AI block designed to balance your data before passing it to the Predictor block. If you intend to link the Imbalanced Data component to a Predictor, note that you have to untoggle the stream button in the latter component settings.\n\nThis components it's based on the ImbalancedLearn python library, check their documentation if you want to know more https://imbalanced-learn.org/stable/references/index.html#api.\nThis component is based on the ImbalancedLearn python library. You can check their documentation to learn more: [Imbalanced Learn API](https://imbalanced-learn.org/stable/references/index.html#api).\n\n\n### How to use it\n\n\nYou can balance your dataset by passing the CSVReader content to the Grouper component (setting a high number in the \"Group size\") and then linking its output to the \"Balancing\" input of the Imbalanced Data component.\n\n### Settings\n\n\nThis block includes several fields to be set:\n\n- **Target Variable Name**: By default, the value is \"target,\" representing the name of the variable to consider as the target for sampling.\n- **Sampling Method**: Choose among the 4 available sampling methods - undersampling, oversampling, SMOTE (Synthetic Minority Oversampling Technique), and SMOTEN (Synthetic Minority Over-sampling Technique for Nominal). The default method used is undersampling.\n- **Random State**: You can set the random state to use.\n\nAmong the field to set in this block, we have the **Target Variable Name**, which by default the value is \"target\", that represent the name of the variable to consider as target for the sampling. Then we have to choose among the 4 sampling methods available undersampling, oversampling, SMOTE, namely Synthetic Minority Oversampling Technique, and SMOTEN (Synthetic Minority Over-sampling Technique for Nominal). The default method used is undersampling. It's possible to set also the **Random State** to use.\n\n\n\n\nBased on the chosen sampling strategy, you may find other fields:\n\n- **Sampling Strategy**: This field is present independently of the chosen sampling method. It represents the resampling strategy to adopt. For example, choosing \"minority\" will imply resampling only the minority class, \"not minority\" will resample all classes except the minority, and so on.\n- **k_neighbors**: This value can be set only for the synthetic-based techniques (i.e., \"SMOTE,\" \"SMOTEN\"), and it represents the number of nearest neighbors used to define the neighborhood of samples used to generate the synthetic samples.\n- **Sample with replacement**: This field is available to be set only for the \"undersampling\" method. If toggled, the sample will be with replacement of the extracted sample; otherwise, without.\n\n\n\n",
+            "inputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing",
+                "service": "balance",
+                "to": "balancing"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "balancing",
+                "label": "Balancing"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Custom",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "target",
+                  "type": "text",
+                  "label": "Target Variable Name",
+                  "helper": "",
+                  "group": "",
+                  "value": "target",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "method",
+                  "type": "select",
+                  "label": "Sampling Method",
+                  "helper": "",
+                  "group": "",
+                  "value": "undersampling",
+                  "description": "",
+                  "validation": null,
+                  "options": [
+                    "undersampling",
+                    "oversampling",
+                    "SMOTE",
+                    "SMOTEN"
+                  ]
+                },
+                {
+                  "name": "random_state",
+                  "type": "number",
+                  "label": "Random State",
+                  "helper": "",
+                  "group": "",
+                  "value": 123,
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "auto",
+                    "majority",
+                    "not majority",
+                    "not minority",
+                    "all"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "replacement",
+                  "type": "dynamic",
+                  "label": "Sample with raplacement",
+                  "helper": "",
+                  "group": "",
+                  "value": false,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"undersampling\"",
+                  "dynamicType": "boolean",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"oversampling\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "k_neighbors",
+                  "type": "dynamic",
+                  "label": "K neighbors",
+                  "helper": "",
+                  "group": "",
+                  "value": 5,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTE\"",
+                  "dynamicType": "number",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "sampling_strategy",
+                  "type": "dynamic",
+                  "label": "Sampling Strategy",
+                  "helper": "",
+                  "group": "",
+                  "value": "auto",
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTEN\"",
+                  "dynamicType": "select",
+                  "options": [
+                    "all",
+                    "auto",
+                    "not minority",
+                    "not majority",
+                    "minority"
+                  ],
+                  "fields": null,
+                  "url": null
+                },
+                {
+                  "name": "k_neighbors",
+                  "type": "dynamic",
+                  "label": "K neighbors",
+                  "helper": "",
+                  "group": "",
+                  "value": 5,
+                  "description": "",
+                  "validation": null,
+                  "parent": "method",
+                  "condition": "{parent}==\"SMOTEN\"",
+                  "dynamicType": "number",
+                  "options": null,
+                  "fields": null,
+                  "url": null
+                }
+              ],
+              "click": null,
+              "icon": "RiScales3Fill",
+              "values": {
+                "target": "target",
+                "method": "undersampling",
+                "random_state": 123,
+                "sampling_strategy": "auto",
+                "k_neighbors": 5
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "__class__": "Node"
         }
       ],
       "edges": [
@@ -3143,48 +3452,6 @@
           "data": {
             "startColor": "#F8637A",
             "stopColor": "#D770AD"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-007df25a-0c9d-4e92-a652-919b5f62684doutput-b778ca38-5bb2-4195-ba7c-91924df41709balancing",
-          "source": "007df25a-0c9d-4e92-a652-919b5f62684d",
-          "sourceHandle": "output",
-          "target": "b778ca38-5bb2-4195-ba7c-91924df41709",
-          "targetHandle": "balancing",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-b778ca38-5bb2-4195-ba7c-91924df41709balancing-fa3ace84-a325-46a7-a66c-b769a2dc13d6fit",
-          "source": "b778ca38-5bb2-4195-ba7c-91924df41709",
-          "sourceHandle": "balancing",
-          "target": "fa3ace84-a325-46a7-a66c-b769a2dc13d6",
-          "targetHandle": "fit",
-          "data": {
-            "startColor": "#888",
-            "stopColor": "#FFB300"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-b778ca38-5bb2-4195-ba7c-91924df41709balancing-fa3ace84-a325-46a7-a66c-b769a2dc13d6evaluate",
-          "source": "b778ca38-5bb2-4195-ba7c-91924df41709",
-          "sourceHandle": "balancing",
-          "target": "fa3ace84-a325-46a7-a66c-b769a2dc13d6",
-          "targetHandle": "evaluate",
-          "data": {
-            "startColor": "#888",
-            "stopColor": "#FFB300"
           },
           "selected": false,
           "dragging": false,
@@ -3352,6 +3619,34 @@
           "targetHandle": "fit",
           "data": {
             "startColor": "#D770AD",
+            "stopColor": "#FFB300"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-007df25a-0c9d-4e92-a652-919b5f62684doutput-4aa14f93-cd87-459c-8805-c3ddb3cd6db2balancing",
+          "source": "007df25a-0c9d-4e92-a652-919b5f62684d",
+          "sourceHandle": "output",
+          "target": "4aa14f93-cd87-459c-8805-c3ddb3cd6db2",
+          "targetHandle": "balancing",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-4aa14f93-cd87-459c-8805-c3ddb3cd6db2balancing-fa3ace84-a325-46a7-a66c-b769a2dc13d6fit",
+          "source": "4aa14f93-cd87-459c-8805-c3ddb3cd6db2",
+          "sourceHandle": "balancing",
+          "target": "fa3ace84-a325-46a7-a66c-b769a2dc13d6",
+          "targetHandle": "fit",
+          "data": {
+            "startColor": "#888",
             "stopColor": "#FFB300"
           },
           "selected": false,
