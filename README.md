@@ -29,8 +29,8 @@ Based on the chosen sampling strategy, you may find other fields:
 - **Sample with replacement**: This field is available to be set only for the "undersampling" method. If toggled, the sample will be with replacement of the extracted sample; otherwise, without.
 
 <p float="left"  align="middle">
-  <img src="resources/imb_settings.png" width=32%x />
-  <img src="resources/imb_settings2.png" width=32%x />
+  <img src="resources/imb_settings.png" width=40%x />
+  <img src="resources/imb_settings2.png" width=40%x />
 </p>
 
 Feel free to contribute to this project by raising issues or submitting pull requests. Let's make our models more accurate and unbiased together! 🤝

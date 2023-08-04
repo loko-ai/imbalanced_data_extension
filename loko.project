@@ -3,7 +3,7 @@
   "id": "imbalanced_data_extension",
   "description": "",
   "created_on": "05/06/2023, 14:06:03",
-  "last_modify": "04/08/2023, 10:43:24",
+  "last_modify": "04/08/2023, 10:49:48",
   "graphs": {
     "main": {
       "nodes": [
@@ -3161,7 +3161,8 @@
                 "sampling_strategy": "auto",
                 "k_neighbors": "5"
               }
-            }
+            },
+            "locked": null
           },
           "selectable": true,
           "draggable": true,
