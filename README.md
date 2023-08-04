@@ -7,11 +7,14 @@ Balancing a dataset makes training a model easier as it mitigates the risk of th
 
 ## How to Use it 🚀
 
-You can balance your dataset by following these steps:
+![](resources/imbalanced_data_flow.png)
+
+You can balance your dataset, and use it to train your model, by building the flow shown above, following these steps:
 1. Pass the CSVReader content to the Grouper component (setting a high number as the group size).
 2. Link the Grouper's output to the "Balancing" input of the Imbalanced Data component.
+3. The output, as shown in the image below, is an object with keys "data" and the target name, in this case "target", and values representing the resampled data. This output is ready to be used by the Predictor component; just make sure that the "Stream data" field in the latter component is untoggled.
 
-![](resources/imbalanced_data_flow.png)
+![](resources/output_sample.png)
 
 ## Settings ⚙️
 
